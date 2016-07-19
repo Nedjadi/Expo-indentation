@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js – The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+
+					<h3>Conventions d'ecriture pour le langage JavaScript</h3>
+					<p>
+
+					</p>
+				</section>
+
+				<section>
+					<h2>fichiers JavaScript</h2>
+					<p>
+
+
+Le programmes JavaScript doivent être stockés et livrés en fichiers.js .
+
+le code JavaScript ne devrait pas être intégré dans les fichiers HTML, sauf si le code est spécifique à une seule session.Car dans le fichier HTML il s'ajoute de manière significative sans possibilité de d'atténuation la mise en cache de compression.
+					</p>
+				</section>
+
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section>
+						<h2>Les espaces</h2>
+						<p>
+
+Lorsque cela est possible, ces règles sont compatibles apres des siècles de bonnes pratiques avec un style littéraire. Les écarts par rapport au style littéraire ne devraient être tolérés que s'il y a des preuves solides d'un avantage important.
+
+Les lignes vides améliorer la lisibilité en créant des sections de code qui sont logiquement liées.
+
+Les espaces vides doivent toujours être utilisés dans les cas suivants:</p>
+
+
+					</section>
+					<section>
+
+						<p>Un mot-clé suivi par une <span class="red">
+
+					parenthèse gauche</span> --( --  doit être séparé par un espace. Les espaces sont utilisés pour que les choses qui ne sont pas des invocations ressemblent moins à des invocations, ainsi par exemple, il devrait y avoir d'espace après <span class="red">if</span> ou <span class="red">while</span><br><br>
+        while "espace" (true) {</p>
+					</section>
+					<section>
+						<h2>Le mot fonction est toujours suivi par un espace.</h2>
+						<p>Aucun espace ne doit séparer un opérateur unaire et son opérande sauf lorsque l'exploitant est un mot tel que typeof.<br><br>
+Tous les opérateurs binaires devraient être séparés de leurs opérandes par un espace de chaque côté.<br><br>Sauf exception pour :   --(--  <strong class="red">parenthèse gauche</strong> et --[--  <strong class="red">crochet gauche.</strong></p>
+					</section>
+          <section><p>    Chaque ---  , ---<strong class="red">virgule</strong> devrait être suivi par un espace ou un saut de ligne.<br><br>
+Chaque---  ; ---<strong class="red">Point virgule</strong> à la fin d'une instruction doit être suivie d'un saut de ligne.<br><br>
+Chaque---  ; ---<strong class="red">Point virgule</strong> dans la partie de commande d'un de déclaration devrait être suivie par un espace.</p>
+
+					</section>
+				</section>
+
+								<section data-background="635496NPHdissapoint.gif">
+
+									<h3>
+									Si vous voulez pas voir Theo comme sa   			<br><br><br><br><br><br><br><br><br>	<br>	<br>
+								</h3>
+								</section>
+
+
+
+
+								<section data-background="img-31600603e3.gif">
+
+									<h3>
+									Ou Guillaume comme sa  			<br><br><br><br><br><br><br><br><br>	<br>	<br>
+								</h3>
+								</section>
+
+								<section>
+
+										Surtout ne faite pas sa !!!
+										<section><pre><code class="hljs" data-trim contenteditable>
+
+					function Alert(sA)
+					{
+				if(!document.getElementsByTagName) return;
+				varoA= document.getElementsByTagName(sA);
+				if  (!oA) return;
+				variI = oA.length - 1;
+				for(iI;iI >= 0; iI--) {
+				if(oA[iI].className == 'alert')  {
+				oA[iI].onclick = function()   {
+				window.alert('coucou');
+				return false;
+					  };
+					  }
+					}
+					}
+
+					window.onload = function()
+					{
+					   Alert('a');
+					};</code></pre>
+					       Car ceci est incomprehensible !
+										</section>
+
+								</section>
+
+
+
+
+												<section>
+
+														Mais ça
+														<section><pre><code class="hljs" data-trim contenteditable>
+			// Avec quelque commentaire sympa
+
+function Alert(sA)
+{
+if(!document.getElementsByTagName) return;//si vous voulez
+
+
+var oA = document.getElementsByTagName(sA);
+if(!oA) return;//Sa mange pas de pain
+
+
+var iI = oA.length - 1;
+
+for(iI; iI >= 0; iI--)
+{
+	if(oA[iI].className == 'alert')
+	{
+			oA[iI].onclick = function()
+			{
+			window.alert('coucou');
+			 return false;
+	 };
+	}
+ }
+}
+//et la quennelle passe mieux
+window.onload = function()
+{
+Alert('a');
+};
+							              </code></pre>
+									       La c'est beaucoup mieux!!
+														</section>
+
+												</section>
+				<section>
+					<h2>Les commentaires</h2>
+					<p>
+
+
+Soyez généreux avec  les commentaires. Il est utile de laisser une information car elle sera lu à une date ultérieure par des personnes  qui auront besoin de comprendre ce que vous avez fait et pourquoi. Les commentaires doivent être bien écrit et clair. Une petite touche d'humour occasionnelle peut être appréciée.
+
+
+
+
+					</p>
+				</section>
+
+				<section>
+					<h2 class="red">Attention</h2>
+					<p>
+						des commentaires erronés peuvent rendre les programmes encore plus difficile à lire et à comprendre
+					</p>
+					Faite des observations pertinentes. Concentrez-vous sur ce qui est pas immédiatement visible. Ne perdrer pas votre temps pour ecrire :
+					<pre><code class="hljs" data-trim contenteditable>
+						i = 0; // Définir i à zéro.
+					</code></pre>
+           Ne soyet pas <strong class="red">sôt!!!</strong>
+				</section>
+
+								<section>
+
+									<h3 >
+									<strong class="red">Pourquoi ???</strong>
+								</h3>
+								</section>
+								<section>
+								<h3>Si les commentaires sont moches, le code est moche</h3>
+								If the comments are ugly, the code is ugly
+									</section>
+								<section>
+
+									<p> Le développeur de "Plone"<br> <span class="ye">Martin Aspeli</span><br>A expliquer un jour qu'un programmeur en C faisait part de trois règles apprises à ses dépens. Celle qui a particulièrement attiré l’attention de Martin (et la mienne) est la suivante  :
+									</p>
+								</section>
+
+							<section>
+Les bons programmes ne comportent aucune faute d’orthographe ni de faute de grammaire.<br> <br>Je pense que cela vient probablement d’une attention soutenue aux moindres détails.<br><br>Dans les programmes excellents tout est correct à tous les niveaux, jusqu’aux points qui terminent les phrases de commentaires.
+
+	</section>
+
+
+				<section style="text-align: left;" data-background="lcrHVMq.gif">
+					<h1>THE END</h1>
+		
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
